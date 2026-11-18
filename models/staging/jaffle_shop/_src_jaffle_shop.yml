@@ -1,0 +1,34 @@
+sources:
+  - name: jaffle_shop
+    database: dbt-tutorial
+    schema: jaffle_shop
+    description: A clone of a Postgres application database
+ 
+
+    tables:
+      - name: customers
+        description: Raw customer data.
+        columns:
+          - name: id
+            description: Primary key for the customer data
+            data_tests:
+              - unique
+              - not_null
+          - name: first_name
+          - name: last_name
+              
+      - name: orders
+        description: Raw orders data.
+        columns:
+          - name: id
+            description: Primary key for the order data
+            data_tests:
+              - unique
+              - not_null
+          - name: user_id
+          - name: order_date
+          - name: status
+          - name: _etl_loaded_at
+              
+        
+
